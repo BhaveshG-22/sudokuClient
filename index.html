@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>9x9 Grid of Boxes</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Loading icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+<body>
+    <div>
+
+        <nav class="navbar navbar-dark bg-dark d-flex justify-content-around navbar">
+            <span class="navbar-brand mb-0 header">Sudoku Solver</span>
+        </nav>
+
+        <!-- <div class="confetti"> -->
+
+
+
+        <div class="container">
+            <!-- The 81 boxes here, each one representing a cell in a Sudoku grid -->
+            <div class="box ml3 mt3" id="box00"></div>
+            <div class="box mt3" id="box01"></div>
+            <div class="box mr mt3" id="box02"></div>
+            <div class="box ml mt3" id="box03"></div>
+            <div class="box mt3" id="box04"></div>
+            <div class="box mr mt3" id="box05"></div>
+            <div class="box ml mt3" id="box06"></div>
+            <div class="box mt3" id="box07"></div>
+            <div class="box mt3 mr3" id="box08"></div>
+
+
+            <div class="box ml3" id="box10"></div>
+            <div class="box" id="box11"></div>
+            <div class="box mr" id="box12"></div>
+            <div class="box ml" id="box13"></div>
+            <div class="box" id="box14"></div>
+            <div class="box mr" id="box15"></div>
+            <div class="box ml" id="box16"></div>
+            <div class="box" id="box17"></div>
+            <div class="box mr3" id="box18"></div>
+
+            <div class="box ml3 mb" id="box20"></div>
+            <div class="box mb" id="box21"></div>
+            <div class="box mr mb" id="box22"></div>
+            <div class="box ml mb" id="box23"></div>
+            <div class="box mb" id="box24"></div>
+            <div class="box mr mb" id="box25"></div>
+            <div class="box ml mb" id="box26"></div>
+            <div class="box mb" id="box27"></div>
+            <div class="box mb mr3" id="box28"></div>
+
+            <div class="box ml3 mt" id="box30"></div>
+            <div class="box mt" id="box31"></div>
+            <div class="box mr mt" id="box32"></div>
+            <div class="box mt ml" id="box33"></div>
+            <div class="box mt" id="box34"></div>
+            <div class="box mr mt" id="box35"></div>
+            <div class="box mt ml" id="box36"></div>
+            <div class="box mt" id="box37"></div>
+            <div class="box mt mr3 " id="box38"></div>
+
+            <div class="box ml3" id="box40"></div>
+            <div class="box" id="box41"></div>
+            <div class="box mr" id="box42"></div>
+            <div class="box ml" id="box43"></div>
+            <div class="box" id="box44"></div>
+            <div class="box mr" id="box45"></div>
+            <div class="box ml" id="box46"></div>
+            <div class="box" id="box47"></div>
+            <div class="box mr3" id="box48"></div>
+
+            <div class="box ml3 mb" id="box50"></div>
+            <div class="box mb" id="box51"></div>
+            <div class="box mr mb" id="box52"></div>
+            <div class="box mb ml" id="box53"></div>
+            <div class="box mb" id="box54"></div>
+            <div class="box mr mb" id="box55"></div>
+            <div class="box mb ml" id="box56"></div>
+            <div class="box mb" id="box57"></div>
+            <div class="box mb mr3" id="box58"></div>
+
+            <div class="box ml3 mt" id="box60"></div>
+            <div class="box mt" id="box61"></div>
+            <div class="box mr mt" id="box62"></div>
+            <div class="box mt ml" id="box63"></div>
+            <div class="box mt" id="box64"></div>
+            <div class="box mr mt" id="box65"></div>
+            <div class="box mt ml" id="box66"></div>
+            <div class="box mt" id="box67"></div>
+            <div class="box mt mr3" id="box68"></div>
+
+            <div class="box ml3" id="box70"></div>
+            <div class="box" id="box71"></div>
+            <div class="box mr" id="box72"></div>
+            <div class="box ml" id="box73"></div>
+            <div class="box" id="box74"></div>
+            <div class="box mr" id="box75"></div>
+            <div class="box ml" id="box76"></div>
+            <div class="box" id="box77"></div>
+            <div class="box mr3" id="box78"></div>
+
+            <div class="box ml3 mb3" id="box80"></div>
+            <div class="box mb3" id="box81"></div>
+            <div class="box mr mb3" id="box82"></div>
+            <div class="box ml mb3" id="box83"></div>
+            <div class="box mb3" id="box84"></div>
+            <div class="box mr mb3" id="box85"></div>
+            <div class="box ml mb3" id="box86"></div>
+            <div class="box mb3" id="box87"></div>
+            <div class="box mr3 mb3" id="box88"></div>
+
+
+        </div>
+
+        <div class="control-btn">
+
+            <button class="btn btn-primary solve-btn" onclick="solve()">Solve</button>
+
+
+            <button class="btn btn-danger stop-btn disabled flex-child" onclick="stop()">
+                <div class="flex-container">Stop<i class="fa fa-spin flex-child" id="loader"></i> </div>
+            </button>
+
+
+
+            SLOW<input type="range" min="20" max="1500" value0="1000" id="myRange" onchange="updateTimeInterval()">FAST
+
+
+            <button class="btn btn-success btn-generate " onclick="generateNew()">Generate</button>
+
+
+
+
+        </div>
+
+
+        <footer class="bg-dark text-light text-center d-flex justify-content-center align-items-center">
+            <h5 class="text-center footer-content">Made with ❤️ by <a
+                    href="https://www.linkedin.com/in/bhavesh-gavali-5b7a57192/" target="_blank">Bhavesh
+                    Gavali</a></h5>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+   </body>
+
+</html>

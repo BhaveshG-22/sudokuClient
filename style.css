@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carlito&display=swap');
+
+.header {
+   font-family: 'Poppins', sans-serif;
+   font-size: 30px;
+}
+
+/* Add any necessary CSS styles here */
+.container {
+
+   margin-top: 30px;
+
+   display: grid;
+   grid-template-columns: repeat(9, 1fr);
+   grid-template-rows: repeat(9, 1fr);
+   width: 450px;
+   height: 450px;
+   /* border: px solid rgb(0, 0, 0); */
+
+
+
+
+
+}
+
+.box {
+   /* box-sizing: border-box; */
+   border: 0.5px solid rgb(143, 138, 138);
+   width: 100%;
+   height: 100%;
+   font-family: 'Nunito', sans-serif;
+
+   font-size: 1.8em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.mr3 {
+   border-right: 5px solid black;
+}
+
+.ml3 {
+   border-left: 5px solid black;
+}
+
+.mt3 {
+   border-top: 5px solid black;
+}
+
+.mb3 {
+   border-bottom: 5px solid black;
+}
+
+
+.mr {
+   border-right: 2px solid black;
+}
+
+.ml {
+   border-left: 2px solid black;
+}
+
+.mt {
+   border-top: 2px solid black;
+}
+
+.mb {
+   border-bottom: 2px solid black;
+}
+
+
+
+
+
+
+
+
+#myRange {
+   /* Rotate the range input 90 degrees */
+   transform: rotate(180deg);
+
+   /* Set the width and height of the slider */
+   width: 200px;
+   height: 20px;
+
+   /* Adjust the appearance of the slider thumb and track */
+   appearance: none;
+   background-color: #ddd;
+   border-radius: 10px;
+}
+
+.control-btn {
+   font-family: 'Times', sans-serif;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 45px;
+   padding: 10px;
+}
+
+.control-btn button {
+   margin-right: 25px;
+   margin-left: 25px;
+
+}
+
+.control-btn input[type="range"] {
+   width: 200px;
+   margin-left: 3px;
+   margin-right: 3px;
+}
+
+.confetti {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   z-index: 1000;
+}
+
+.confetti-piece {
+   position: absolute;
+   width: 10px;
+   height: 30px;
+   background: #ffd300;
+   top: 0;
+   opacity: 0;
+}
+
+
+.flex-container {
+   display: flex;
+}
+
+footer {
+   height: 49px;
+   margin-top: 10px;
+   font-family: 'Carlito', sans-serif;
+}
+
+a {
+   text-decoration: underline;
+   color: #fff; 
+}
+ 
